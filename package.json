@@ -11,10 +11,7 @@
     "lib": "lib"
   },
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js",
-    "build":"ng build",
-    "heroku-postbuild" : "ng build --prod"
+    "start": "node app.js"
   },
   "author": "",
   "license": "ISC",
