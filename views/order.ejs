@@ -1,0 +1,72 @@
+<%- include("layout/header"); %>
+<div class="container">
+    <form  action="/user/order" style="padding: 5% 15%;"  method="POST" enctype="multipart/form-data" >
+       
+        <div class="form-group">
+            <label for="inputEmail">Email</label>
+            <input type="email" class="form-control" name="email" placeholder="email" value=" <%= user.email %>" required readonly>
+        </div>
+        <div class="form-group">
+            <label for="inputEmail">Name</label>
+            <input type="text" class="form-control" name="name" placeholder="email" value=" <%= user.name %>" required>
+        </div>
+        <div class="form-group">
+            <label for="inputAddress">Address</label>
+            <input type="text" class="form-control" name="address" placeholder="" required>
+        </div>
+        <div class="form-group">
+            <label for="inputAddress">Contact No.</label>
+            <input type="text" class="form-control" name="mob" placeholder="" value="<%= user.mobile %>" required readonly>
+        </div>
+        <div class="form-group">
+            <label for="inputAddress"> Additional Contact No.</label>
+            <input type="text" class="form-control" name="mob2" placeholder="" value="">
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputCity">City</label>
+                <input type="text" class="form-control" name="city" required>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputCity">State</label>
+                <input type="text" class="form-control" name="state" required>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="inputZip">Zip</label>
+                <input type="text" class="form-control" name="zip" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputAddress">Order Description</label>
+            <input type="text" class="form-control" name="description" placeholder="" required>
+        </div>
+        <div class="form-group">
+            <label for="inputAddress">Choose design type</label>
+            <select class="custom-select custom-select-lg mb-3" name="type">
+            <option selected>Open this select menu</option>
+            <option value="Birthday Wishes">Birthday Wishes</option>
+            <option value="Festival Wishes">Festival Wishes</option>
+            <option value="Invitation card">Invitation card</option>
+            <option value="Promo Posters">Promo Posters</option>
+            <option value="Photo Manupulation">Photo Manupulation</option>
+            <option value="Posters">Posters</option>
+            <option value="Small Flex">Small Flex</option>
+            <option value="Id cards">Id cards</option>
+            <option value="Visiting Cards">Visiting Cards</option>
+            <option value="Certificates">Certificates</option>
+            <option value="Large Flex">Large Flex</option>
+            <option value="Large Banners">Large Banners</option>
+            <option value="T-shirts">T-shirts</option>
+            <option value="logo design">logo design</option>
+            
+        </select>
+        </div>
+        <div class="form-group">
+            <label for="design">Upload your order design if any </label>
+            <input class="form-control" type="file" name="order_img" >
+        </div>
+       
+        <button type="submit" class="btn btn-primary">place your order</button>
+    </form>
+</div>
+<%- include("layout/footer"); %>

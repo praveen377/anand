@@ -1,0 +1,52 @@
+<%- include("layout/header"); %>
+
+<!--==========================
+      Speaker Details Section
+    ============================-->
+    <section id="speakers-details" class="wow fadeIn">
+        <div class="container">
+          <div class="section-header">
+              <!-- heading title  -->
+              
+            <h2><%=show.heading %></h2>
+            <!-- heading description -->
+            <p><%= show.head_des %></p>
+          </div>
+  
+          <div class="row">
+            <div class="col-md-6">
+                <!-- image link -->
+              <img src="../../uploads/<%= show.path %>" alt="Speaker 1" class="img-fluid">
+            </div>
+  
+            <div class="col-md-6">
+              <div class="details">
+                  <!-- heading title -->
+                <h2><%= show.heading %>'20</h2>
+                
+                <!-- social media account address -->
+                <div class="social">
+                  <a href="<%= show.twitter%>"><i class="fa fa-twitter"></i></a>
+                  <a href="<%= show.fb %>"><i class="fa fa-facebook"></i></a>
+                  <a href="<%= show.google %>"><i class="fa fa-google-plus"></i></a>
+                  <a href="<%= show.linkedin %>"><i class="fa fa-linkedin"></i></a>
+                </div>
+
+                <!-- all description -->
+                <p><%= show.para1 %></p>
+                <p><%= show.para2 %></p> 
+                <p><%= show.para3 %></p>
+
+                <!-- website address -->
+                <a href="<%= show.web %>"><%= show.web %></a>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+  
+      </section>
+
+
+
+<%- include("layout/footer"); %>

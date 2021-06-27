@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ANAND WORLD</title>
+
+
+  <!-- Favicons -->
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/venobox/venobox.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="/css/style.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+  <!--==========================
+    Header
+  ============================-->
+  <header id="header">
+    <div class="container">
+
+      <div id="logo" class="pull-left">
+        <a href="/" class="scrollto"><img src="img/logo.png" alt="" title=""></a>
+      </div>
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class="menu-active"><a href="#intro">Home</a></li>
+
+          <li><a href="#about">About</a></li>
+         
+          <li><a href="#buy-tickets">Services</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <% if(user) { %>
+            <% if(user.role==="CLIENT") { %>
+            <li><a href="/user/order">Order</a></li>
+            <% } %>
+            <li><a href="/user/profile">Profile</a></li>
+            <% if(user.role==="ADMIN") { %>
+            <li><a href="/admin/users">Manage Users</a></li>
+            <li><a href="/admin/total_order">Total Order</a></li>
+            <li><a href="/admin/add">Add Work</a></li>
+            <% } %>
+            <li><a href="/auth/logout">Logout</a></li>
+          <% } else{ %> 
+            <li><a href="/auth/register">Register</a></li>
+            <li><a href="/auth/login">Order</a></li>
+          <% } %>
+          <li class="buy-tickets"><a href="/join">Join Team</a></li>
+        </ul>
+      </nav><!-- #nav-menu-container -->
+    </div>
+  </header><!-- #header -->
+
+  <!--==========================
+    Intro Section
+  ============================-->
+  <section id="intro">
+    <div class="intro-container wow fadeIn">
+      <h1 class="mb-4 pb-0">WELCOME TO<br><span>ANAND WORLD</span> OF DESIGN</h1>
+      <p class="mb-4 pb-0">Affordable solutions for all your creativity needs</p>
+      <a href="https://youtu.be/Ly-J13PqACs" class="venobox play-btn mb-4" data-vbtype="video"
+        data-autoplay="true"></a>
+      <a href="#about" class="about-btn scrollto">Have a Look</a>
+    </div>
+  </section>
+
+  <main id="main">
+
+    <!--==========================
+      About Section
+    ============================-->
+    <section id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <h2>About Us</h2>
+            <p>We Design Everything For You Like Posters, Banners, Flex, ID Cards, Visiting Cards, Certificates, T-Shirts, Photo Manupulation Works And Many More
+
+We Feel That Every Small Or  Newly Started Business Should Also Have A Logo Too. We Also Design Very Professional And Cool LOGOs For Your Brand/Company
+.</p>
+          </div>
+          <div class="col-lg-3">
+            <h3>founder</h3>
+            <p>Anand Prakash</p>
+          </div>
+          <div class="col-lg-3">
+            <h3>Co-Founder</h3>
+            <p>Praveen Kumar Prashant</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--==========================
+      Latest Work Section
+    ============================-->
+    <section id="speakers" class="wow fadeInUp">
+      <div class="container">
+        <div class="section-header">
+          <h2>Latest Works</h2>
+          <p>Here are some of our latest designs</p>
+        </div>
+
+        <div class="row">
+          <% design.forEach(function(event){ %>
+            <div class="col-lg-4 col-md-6">
+              <div class="speaker">
+                <img src="uploads/<%= event.path %>" alt="Speaker 1" class="img-fluid">
+                <div class="details">
+                  <h3><a href="user/design/<%=event.heading%>"><%= event.heading %></a></h3>
+                  <p> <%= event.sec_head %> </p>
+                  <div class="social">
+                    <a href=""><i class="fa fa-twitter"></i></a>
+                    <a href=""><i class="fa fa-facebook"></i></a>
+                    <a href=""><i class="fa fa-google-plus"></i></a>
+                    <a href=""><i class="fa fa-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% }); %>
+        </div>
+        
+      </div>
+
+    </section>
+
+    <!--==========================
+      Why Anand World Section
+    ============================-->
+    <section id="schedule" class="section-with-bg">
+      <div class="container wow fadeInUp">
+        <div class="section-header">
+          <h2>WHY ANAND WORLD</h2>
+          <p>Here are some reasons to choose us</p>
+        </div>
+
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" href="#day-1" role="tab" data-toggle="tab">Punctuality</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#day-2" role="tab" data-toggle="tab">Low Cost</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#day-3" role="tab" data-toggle="tab">Best Service</a>
+          </li>
+        </ul>
+
+        <h3 class="sub-heading">We Do Care About Punctuality, Your Satisfaction Is Our 1ST Priority, We Provide Brilliant Service. </h3>
+
+        <div class="tab-content row justify-content-center">
+
+          <!-- Punctuality 1 -->
+          <div role="tabpanel" class="col-lg-9 tab-pane fade show active" id="day-1">
+
+            <div class="row schedule-item">
+              <div class="col-md-2"><time></time></div>
+              <div class="col-md-10">
+                <h4>Punctuality</h4>
+                <p>We Do Care About Punctuality.</p>
+              </div>
+            </div>
+
+            <div class="row schedule-item">
+              <div class="col-md-2"><time>Time</time></div>
+              <div class="col-md-10">
+                <div class="speaker">
+                  <img src="img/speakers/punctuality.png">
+                </div>
+                <h4>Time <span>Importance Of Time</span></h4>
+                <p>We Know How Important The Time Is For You.</p>
+              </div>
+            </div>
+
+            <div class="row schedule-item">
+              <div class="col-md-2"><time>Priority</time></div>
+              <div class="col-md-10">
+                <div class="speaker">
+                  <img src="img/speakers/priority.png">
+                </div>
+                <h4>Your Satisfaction Is Our 1st Priority. <span>Priority Matters</span></h4>
+                <p>We Know How Urgent Your Work Is, We Are Always Dedicated To Do Your Job.</p>
+              </div>
+            </div>
+
+            <div class="row schedule-item">
+              <div class="col-md-2"><time>Value</time></div>
+              <div class="col-md-10">
+                <div class="speaker">
+                  <img src="img/speakers/value.png">
+                </div>
+                <h4>Value <span>Value Is Important</span></h4>
+                <p>Value Of Time Is Precious</p>
+              </div>
+            </div>
+
+            <div class="row schedule-item">
+              <div class="col-md-2"><time>Work Time</time></div>
+              <div class="col-md-10">
+                <div class="speaker">
+                  <img src="img/speakers/working.png">
+                </div>
+                <h4>Working Time Of Us <span>You Don't Worry</span></h4>
+                <p>Actually You Need Not To Worry About The Time Of Our Working, We Are Highly Dedicated Towards The Work.</p>
+              </div>
+            </div>
+
+            <div class="row schedule-item">
+              <div class="col-md-2"><time>Speed</time></div>
+              <div class="col-md-10">
+                <div class="speaker">
+                  <img src="img/speakers/speed.png">
+                </div>
+                <h4>Speed Of Work. <span>Speed Of Work Progress Is Important</span></h4>
+                <p>We Always Focus On Accuracy With High Speed To Do The Task As Soon As Possible.</p>
+              </div>
+            </div>
+
+            <div class="row schedule-item">
+              <div class="col-md-2"><time>Punctuality</time></div>
+              <div class="col-md-10">
+                <div class="speaker">
+                  <img src="img/speakers/punc.png">
+                </div>
+                <h4>Punctuality Is Always An Important Factor<span>We Are Punctual</span></h4>
+                <p>We Always Try To Do The Job Within The Given Time Period.</p>
+              </div>
+            </div>
+
+          </div>
+          <!-- End Panctuality -->
+
+          <!-- Low Cost -->
+          <div role="tabpanel" class="col-lg-9  tab-pane fade" id="day-2">
+
+            <div class="row schedule-item">
+              <div class="col-md-2"><time>Best Price</time></div>
+              <div class="col-md-10">
+                <div class="speaker">
+                  <img src="img/speakers/bp1.png">
+                </div>
+                <h4>Always Get Service At Best Price. <span>Price Matters</span></h4>
+                <p>We Always Provide Service In Best Price.</p>
+              </div>
+            </div>
+
+            <div class="row schedule-item">
+              <div class="col-md-2"><time>Affordabilty</time></div>
+              <div class="col-md-10">
+                <div class="speaker">
+                  <img src="img/speakers/afford.png">
+                </div>
+                <h4>You Can Always Afford. <span>Don't Worry</span></h4>
+                <p>You Can Always Afford Our Service, There Is No Need To Worry.</p>
+              </div>
+            </div>
+
+            <div class="row schedule-item">
+              <div class="col-md-2"><time>Return</time></div>
+              <div class="col-md-10">
+                <div class="speaker">
+                  <img src="img/speakers/return.png" alt="Cole Emmerich">
+                </div>
+                <h4>You Will Get Back A Very Cool Design. <span>Get Good Value</span></h4>
+                <p>Don't Worry You Are Investing In Very Right Place For Great Value.</p>
+              </div>
+            </div>
+
+            <div class="row schedule-item">
+              <div class="col-md-2"><time>Value For Money</time></div>
+              <div class="col-md-10">
+                <div class="speaker">
+                  <img src="img/speakers/vfm.png">
+                </div>
+                <h4>You Will Get Great Value For Your Money. <span>You Can Trust</span></h4>
+                <p>We Assure You That You Will Always Get Good Designs.</p>
+              </div>
+            </div>
+
+            <div class="row schedule-item">
+              <div class="col-md-2"><time>Save Money</time></div>
+              <div class="col-md-10">
+                <div class="speaker">
+                  <img src="img/speakers/savem.png">
+                </div>
+                <h4>Use Our Service To Save Money. <span>Try it</span></h4>
+                <p>Printing Shop Charges Very High When They Design By Their Self, Now You Only Need To Ask Them To Print.</p>
+              </div>
+            </div>
+
+            <div class="row schedule-item">
+              <div class="col-md-2"><time>Cost</time></div>
+              <div class="col-md-10">
+                <div class="speaker">
+                  <img src="img/speakers/cost.png">
+                </div>
+                <h4>Enjoy Our Service In Good Cost<span>Low Cost</span></h4>
+                <p>Cost Of The Service Always Matters, Now Be Relax About It.</p>
+              </div>
+            </div>
+
+          </div>
+          <!-- End Of Low Cost -->
+
+          <!-- Best Service -->
+          <div role="tabpanel" class="col-lg-9  tab-pane fade" id="day-3">
+
+            <div class="row schedule-item">
+              <div class="col-md-2"><time>Great Designs</time></div>
+              <div class="col-md-10">
+                <div class="speaker">
+                  <img src="img/speakers/design2.png">
+                </div>
+                <h4>We Always Try To Provides Cool And Proffesional Work. <span>Great Work</span></h4>
+                <p>We Belive That We Will Never Let You Disapointed.</p>
+              </div>
+            </div>
+
+            <div class="row schedule-item">
+              <div class="col-md-2"><time>Correction</time></div>
+              <div class="col-md-10">
+                <div class="speaker">
+                  <img src="img/speakers/correction.png">
+                </div>
+                <h4>No One Is Perfect In This World, We Also May Done Mistake. <span>Always Ready To Do Correction</span></h4>
+                <p>We Always Try To Do Great Work With Accuracy, But Some Time There Might May Be Any Typo Error Or Any Design Related Issue, We Are Always Here To Make Correct Our Mistake.</p>
+              </div>
+            </div>
+
+            <div class="row schedule-item">
+              <div class="col-md-2"><time>Value For Money</time></div>
+              <div class="col-md-10">
+                <div class="speaker">
+                  <img src="img/speakers/bp2.png">
+                </div>
+                <h4>Value For Money Service. <span>Best Work At Good Value</span></h4>
+                <p>We Always Dedicated To Do Great Work, To Provide You Good Value.</p>
+              </div>
+            </div>
+
+            <div class="row schedule-item">
+              <div class="col-md-2"><time>Support</time></div>
+              <div class="col-md-10">
+                <div class="speaker">
+                  <img src="img/speakers/support.png">
+                </div>
+                <h4>We Are Always Available To Support. <span>Support Is Very Important</span></h4>
+                <p>Don't Hesitate To Contact Us At Any Time For Any Query Or Suggestion.</p>
+              </div>
+            </div>
+
+            <div class="row schedule-item">
+              <div class="col-md-2"><time>Best Service</time></div>
+              <div class="col-md-10">
+                <div class="speaker">
+                  <img src="img/speakers/best.png">
+                </div>
+                <h4>Good Work, Dedication, Support, Punctuality, Best Price. <span>Make Our Service Best</span></h4>
+                <p>The Most Important Thing To Provide Good Service Is Dedication And Priority.</p>
+              </div>
+            </div>
+
+            <div class="row schedule-item">
+              <div class="col-md-2"><time>Satisfaction</time></div>
+              <div class="col-md-10">
+                <div class="speaker">
+                  <img src="img/speakers/satisfi100.png">
+                </div>
+                <h4>We Are Always Dedicated For Your Task<span>Your Task Is Now Our's</span></h4>
+                <p>At The End We Would Like To Say That You Will Be Having Best Service With Full Stisfaction.</p>
+              </div>
+            </div>
+
+          </div>
+          <!-- End Of Best Service -->
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!--==========================
+      Cool Design Section
+    ============================-->
+    <section id="venue" class="wow fadeInUp">
+
+      <div class="container-fluid">
+
+        <div class="section-header">
+          <h2>Cool Designs</h2>
+          <p>Here Are Some Of Our Cool Designs</p>
+        </div>
+
+        <div class="row no-gutters">
+          <div class="col-lg-6 venue-map">
+           <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4012940.2434155303!2d75.9577087!3d10.8199622!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b00c582b1189633%3A0x559475cc463361f0!2sTamil%20Nadu!5e0!3m2!1sen!2sin!4v1586667319819!5m2!1sen!2sin" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+          </div>
+
+          <div class="col-lg-6 venue-info">
+            <div class="row justify-content-center">
+              <div class="col-11 col-lg-8">
+                <h3>Anand World Services</h3>
+                <h3>for all your creativity needs</h3>
+                <p>We Design Everything For You Like Posters, Banners, Flex, ID Cards, Visiting Cards, Certificates, T-Shirts, Photo Manupulation Works And Many More, We Feel That Every Small Or  Newly Started Business Should Have A Logo Too. We Also Design Very Professional And Cool LOGOs For Your Brand/Company.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="container-fluid venue-gallery-container">
+        <div class="row no-gutters">
+
+          <div class="col-lg-3 col-md-4">
+            <div class="venue-gallery">
+              <a href="img/venue-gallery/1.jpg" class="venobox" data-gall="venue-gallery">
+                <img src="img/venue-gallery/1.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="venue-gallery">
+              <a href="img/venue-gallery/2.jpg" class="venobox" data-gall="venue-gallery">
+                <img src="img/venue-gallery/2.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="venue-gallery">
+              <a href="img/venue-gallery/3.jpg" class="venobox" data-gall="venue-gallery">
+                <img src="img/venue-gallery/3.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="venue-gallery">
+              <a href="img/venue-gallery/4.jpg" class="venobox" data-gall="venue-gallery">
+                <img src="img/venue-gallery/4.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="venue-gallery">
+              <a href="img/venue-gallery/5.jpg" class="venobox" data-gall="venue-gallery">
+                <img src="img/venue-gallery/5.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="venue-gallery">
+              <a href="img/venue-gallery/6.jpg" class="venobox" data-gall="venue-gallery">
+                <img src="img/venue-gallery/6.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="venue-gallery">
+              <a href="img/venue-gallery/7.jpg" class="venobox" data-gall="venue-gallery">
+                <img src="img/venue-gallery/7.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="venue-gallery">
+              <a href="img/venue-gallery/8.jpg" class="venobox" data-gall="venue-gallery">
+                <img src="img/venue-gallery/8.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!--==========================
+      Anand World Section
+    ============================-->
+    <section id="hotels" class="section-with-bg wow fadeInUp">
+
+      <div class="container">
+        <div class="section-header">
+          <h2>ANAND WORLD</h2>
+          <p>We are glad to see you here</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="hotel">
+              <div class="hotel-img">
+                <img src="img/hotels/1.jpg" alt="Hotel 1" class="img-fluid">
+              </div>
+              <h3><a href="#">Design 1</a></h3>
+              <div class="stars">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <p>Double Exposure</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="hotel">
+              <div class="hotel-img">
+                <img src="img/hotels/2.png" alt="Hotel 2" class="img-fluid">
+              </div>
+              <h3><a href="#">Design 2</a></h3>
+              <div class="stars">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-full"></i>
+              </div>
+              <p>Anand World Logo</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="hotel">
+              <div class="hotel-img">
+                <img src="img/hotels/3.jpg" alt="Hotel 3" class="img-fluid">
+              </div>
+              <h3><a href="#">Design 3</a></h3>
+              <div class="stars">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <p>Double Exposure</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!--==========================
+      Gallery Section
+    ============================-->
+    <section id="gallery" class="wow fadeInUp">
+
+      <div class="container">
+        <div class="section-header">
+          <h2>Gallery</h2>
+          <p>Check our gallery for some more designs</p>
+        </div>
+      </div>
+
+      <div class="owl-carousel gallery-carousel">
+        <a href="img/gallery/1.jpg" class="venobox" data-gall="gallery-carousel"><img src="img/gallery/1.jpg" alt=""></a>
+        <a href="img/gallery/2.jpg" class="venobox" data-gall="gallery-carousel"><img src="img/gallery/2.jpg" alt=""></a>
+        <a href="img/gallery/3.jpg" class="venobox" data-gall="gallery-carousel"><img src="img/gallery/3.jpg" alt=""></a>
+        <a href="img/gallery/4.jpg" class="venobox" data-gall="gallery-carousel"><img src="img/gallery/4.jpg" alt=""></a>
+        <a href="img/gallery/5.jpg" class="venobox" data-gall="gallery-carousel"><img src="img/gallery/5.jpg" alt=""></a>
+        <a href="img/gallery/6.jpg" class="venobox" data-gall="gallery-carousel"><img src="img/gallery/6.jpg" alt=""></a>
+        <a href="img/gallery/7.jpg" class="venobox" data-gall="gallery-carousel"><img src="img/gallery/7.jpg" alt=""></a>
+        <a href="img/gallery/8.jpg" class="venobox" data-gall="gallery-carousel"><img src="img/gallery/8.jpg" alt=""></a>
+      </div>
+
+    </section>
+
+    <!--==========================
+      Worked For Section
+    ============================-->
+    <section id="supporters" class="section-with-bg wow fadeInUp">
+
+      <div class="container">
+        <div class="section-header">
+          <h2>Worked For</h2>
+        </div>
+
+        <div class="row no-gutters supporters-wrap clearfix">
+
+          <div class="col-lg-3 col-md-4 col-xs-6">
+            <div class="supporter-logo">
+              <img src="img/supporters/1.png" class="img-fluid" alt="">
+            </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-4 col-xs-6">
+            <div class="supporter-logo">
+              <img src="img/supporters/2.png" class="img-fluid" alt="">
+            </div>
+          </div>
+        
+          <div class="col-lg-3 col-md-4 col-xs-6">
+            <div class="supporter-logo">
+              <img src="img/supporters/3.png" class="img-fluid" alt="">
+            </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-4 col-xs-6">
+            <div class="supporter-logo">
+              <img src="img/supporters/s.png" class="img-fluid" alt="">
+            </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-4 col-xs-6">
+            <div class="supporter-logo">
+              <img src="img/supporters/5.png" class="img-fluid" alt="">
+            </div>
+          </div>
+        
+          <div class="col-lg-3 col-md-4 col-xs-6">
+            <div class="supporter-logo">
+              <img src="img/supporters/6.png" class="img-fluid" alt="">
+            </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-4 col-xs-6">
+            <div class="supporter-logo">
+              <img src="img/supporters/7.png" class="img-fluid" alt="">
+            </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-4 col-xs-6">
+            <div class="supporter-logo">
+              <img src="img/supporters/8.png" class="img-fluid" alt="">
+            </div>
+          </div>
+
+        </div>
+<p>And Many More...</p>
+      </div>
+
+    </section>
+
+    <!--==========================
+      F.A.Q Section
+    ============================-->
+    <section id="faq" class="wow fadeInUp">
+
+      <div class="container">
+
+        <div class="section-header">
+          <h2>F.A.Q </h2>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-9">
+              <ul id="faq-list">
+
+                <li>
+                  <a data-toggle="collapse" class="collapsed" href="#faq1">What Kind Of Service Do You Provide? <i class="fa fa-minus-circle"></i></a>
+                  <div id="faq1" class="collapse" data-parent="#faq-list">
+                    <p>
+                      We Design Everything For You Like Posters, Banners, Flex, ID Cards, Visiting Cards, Certificates, T-Shirts, Photo Manupulation Works And Many More, We Feel That Every Small Or  Newly Started Business Should Have A Logo Too. We Also Design Very Professional And Cool LOGOs For Your Brand/Company.
+                    </p>
+                  </div>
+                </li>
+      
+                <li>
+                  <a data-toggle="collapse" href="#faq2" class="collapsed">What If At 1st Completion Of Task We Feel That There Is Any Mistake Or Design Is Not Ok? <i class="fa fa-minus-circle"></i></a>
+                  <div id="faq2" class="collapse" data-parent="#faq-list">
+                    <p>
+                      We Always Try To Provide Great Designs With Accuracy. But If There Is In Any Typo Error Or Any Design Related Issue Then You Can Ask Us To Modify It, We Will Immediatly Resolve That Issue Without Any Extra Cost.
+                    </p>
+                  </div>
+                </li>
+      
+                <li>
+                  <a data-toggle="collapse" href="#faq3" class="collapsed">I Want To Join Your Team How Can I Do That? <i class="fa fa-minus-circle"></i></a>
+                  <div id="faq3" class="collapse" data-parent="#faq-list">
+                    <p>
+                      You Go To Join Section First, By Clicking On 'Join Team' Button At The Top Right Corner Of This Site You Will Get All The Details About It.
+                    </p>
+                  </div>
+                </li>
+      
+                <li>
+                  <a data-toggle="collapse" href="#faq4" class="collapsed">Do You Also Provide Printing Service? <i class="fa fa-minus-circle"></i></a>
+                  <div id="faq4" class="collapse" data-parent="#faq-list">
+                    <p>
+                      Right Now No, We Only Provide Digital Designs That You Can Use To Print.
+                    </p>
+                  </div>
+                </li>
+      
+                <li>
+                  <a data-toggle="collapse" href="#faq5" class="collapsed">How To Order And Get Delivery Of Design? <i class="fa fa-minus-circle"></i></a>
+                  <div id="faq5" class="collapse" data-parent="#faq-list">
+                    <p>
+                      You Have To Go To Order Section By Clicking On Order Button At Menu, You  Have To Provide All The Details There About The Design, You Can Only Ignore Optional Things There. Once You Done The Order We Will Provide The Delivery In Your Provided E-mail Account.
+                    </p>
+                  </div>
+                </li>
+      
+                <li>
+                  <a data-toggle="collapse" href="#faq6" class="collapsed">What Will Be The Charges? <i class="fa fa-minus-circle"></i></a>
+                  <div id="faq6" class="collapse" data-parent="#faq-list">
+                    <p>
+                      It Depends Uppon The Work/Design.
+                    </p>
+                  </div>
+                </li>
+      
+              </ul>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!--==========================
+      Order Here Section
+    ============================-->
+    <section id="subscribe">
+      <div class="container wow fadeInUp">
+        <div class="section-header">
+          <h2>Order Here</h2>
+          <p>You Can Give Your Order Here.</p>
+        </div>
+
+        <form method="POST" action="/user/order">
+          <div class="form-row justify-content-center">
+            <div class="col-auto">
+             
+            </div>
+            <div class="col-auto">
+              <form>
+                
+              
+              <button type="submit">Order Now</button>
+
+
+              </form>
+            </div>
+          </div>
+        </form>
+
+      </div>
+    </section>
+
+    <!--==========================
+      Services Section
+    ============================-->
+    <section id="buy-tickets" class="section-with-bg wow fadeInUp">
+      <div class="container">
+
+        <div class="section-header">
+          <h2>Services</h2>
+          <p>Here Is Services Which We Provides.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="card mb-5 mb-lg-0">
+              <div class="card-body">
+                <h5 class="card-title text-muted text-uppercase text-center">Online Posts</h5>
+                <h6 class="card-price text-center">Small Designs</h6>
+                <hr>
+                <ul class="fa-ul">
+                  <li><span class="fa-li"><i class="fa fa-check"></i></span>Birthday Wishes</li>
+                  <li><span class="fa-li"><i class="fa fa-check"></i></span>Festival Wishes</li>
+                  <li><span class="fa-li"><i class="fa fa-check"></i></span>Invitation Cards</li>
+                  <li><span class="fa-li"><i class="fa fa-check"></i></span>Promo Posters</li>
+                  <li><span class="fa-li"><i class="fa fa-check"></i></span>Photo Manupulation</li>
+                </ul>
+                <hr>
+                <div class="text-center">
+                  <form method="POST" action="/user/order">
+                 <a href="/user/order"> <button type="button" class="btn">Order Now</button></a>
+              </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card mb-5 mb-lg-0">
+              <div class="card-body">
+                <h5 class="card-title text-muted text-uppercase text-center">Printable Designs</h5>
+                <h6 class="card-price text-center">Small Designs</h6>
+                <hr>
+                <ul class="fa-ul">
+                  <li><span class="fa-li"><i class="fa fa-check"></i></span>Posters</li>
+                  <li><span class="fa-li"><i class="fa fa-check"></i></span>Small Flex</li>
+                  <li><span class="fa-li"><i class="fa fa-check"></i></span>ID Cards</li>
+                  <li><span class="fa-li"><i class="fa fa-check"></i></span>Visiting Cards</li>
+                  <li><span class="fa-li"><i class="fa fa-check"></i></span>Certificates</li>
+                 
+                </ul>
+                <hr>
+                <div class="text-center">
+                  <form method="POST" action="/user/order">
+                   <a href="/user/order"> <button type="button" class="btn">Order Now</button></a>
+               </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Online Post -->
+          <div class="col-lg-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title text-muted text-uppercase text-center">Printable Designs</h5>
+                <h6 class="card-price text-center">Large Designs</h6>
+                <hr>
+                <ul class="fa-ul">
+                  <li><span class="fa-li"><i class="fa fa-check"></i></span>Large Flex</li>
+                  <li><span class="fa-li"><i class="fa fa-check"></i></span>Large Banners</li>
+                  <li><span class="fa-li"><i class="fa fa-check"></i></span>T-Shirts</li>
+                  <li><span class="fa-li"><i class="fa fa-check"></i></span>Logo Design</li>
+                  <li><span class="fa-li"><i class="fa fa-check"></i></span>And Many More...</li>
+                                 </ul>
+                <hr>
+                <div class="text-center">
+                  <form method="POST" action="/user/order">
+                  <a href="/user/order"><button type="button" class="btn">Order Now</button></a>
+              </form>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Modal Order Form -->
+      <div id="buy-ticket-modal" class="modal fade">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Buy Tickets</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form method="POST" action="#">
+                <div class="form-group">
+                  <input type="text" class="form-control" name="your-name" placeholder="Your Name">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" name="your-email" placeholder="Your Email">
+                </div>
+                <div class="form-group">
+                  <select id="ticket-type" name="ticket-type" class="form-control" >
+                    <option value="">-- Select Your Ticket Type --</option>
+                    <option value="standard-access">Standard Access</option>
+                    <option value="pro-access">Pro Access</option>
+                    <option value="premium-access">Premium Access</option>
+                  </select>
+                </div>
+                <div class="text-center">
+                  <button type="submit" class="btn">Buy Now</button>
+                </div>
+              </form>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+
+    </section>
+
+    <!--==========================
+      Contact Section
+    ============================-->
+    <section id="contact" class="section-bg wow fadeInUp">
+
+      <div class="container">
+
+        <div class="section-header">
+          <h2>Contact Us</h2>
+          <p>If You Have Any Query Or Suggestion Then Feel Free To Contact Us.</p>
+        </div>
+
+        <div class="row contact-info">
+
+          <div class="col-md-4">
+            <div class="contact-address">
+              <i class="ion-ios-location-outline"></i>
+              <h3>Address</h3>
+              <address>Tamilnadu, INDIA</address>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="contact-phone">
+              <i class="ion-ios-telephone-outline"></i>
+              <h3>Phone Number</h3>
+              <p><a href="tel:+155895548855">+91 7987444075</a></p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="contact-email">
+              <i class="ion-ios-email-outline"></i>
+              <h3>Email</h3>
+              <p><a href="mailto:admin@anand-prakash.com">admin@anand-prakash.com</a></p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- <div class="form">
+          <div id="sendmessage">Your message has been sent. Thank you!</div>
+          <div id="errormessage"></div>
+          <form action="" method="post" role="form" class="contactForm">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <div class="validation"></div>
+              </div>
+              <div class="form-group col-md-6">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                <div class="validation"></div>
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+              <div class="validation"></div>
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+              <div class="validation"></div>
+            </div>
+            <div class="text-center"><button type="submit">Send Message</button></div>
+          </form>
+        </div> -->
+
+      </div>
+    </section><!-- #contact -->
+
+  </main>
+
+
+  <!--==========================
+    Footer
+  ============================-->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-info">
+            <img src="img/logo.png" alt="TheEvenet">
+            <p>
+
+Make Your Ideas A Reality. We Design Everything For You Like Posters, Banners, Flex, ID Cards, Visiting Cards, Certificates, T-Shirts, Photo Manupulation Works And Many More, We Feel That Every Small Or  Newly Started Business Should Have A Logo Too. We Also Design Very Professional And Cool LOGOs For Your Brand/Company.</p>
+          </div>
+
+         
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Commited For</h4>
+            <ul>
+              <li><i class="fa fa-angle-right"></i> Best Price</li>
+              <li><i class="fa fa-angle-right"></i> Value For Money</li>
+              <li><i class="fa fa-angle-right"></i> Punctuality</li>
+              <li><i class="fa fa-angle-right"></i> Good Service</li>
+              <li><i class="fa fa-angle-right"></i> Your Satisfaction Is Our 1st Priority</li>
+          </div>
+
+
+
+ <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="fa fa-angle-right"></i> <a href="#">Home</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="#about">About us</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="#buy-tickets">Services</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="#gallery">Gallery</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="http://eepurl.com/gYixvb">Order</a></li>
+            </ul>
+          </div>
+
+
+
+          
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h4>Contact Us</h4>
+            <p>
+              Tamilnadu, <br>
+             INDIA<br>
+              
+              <strong>Phone:</strong> +91 7987444075<br>
+              <strong>Email:</strong> admin@anand-prakash.com<br>
+            </p>
+
+            <div class="social-links">
+               <a href="https://www.facebook.com/ANAND-WORLD-113666423615981/" class="facebook"><i class="fa fa-facebook"></i></a>
+              <a href="https://www.instagram.com/a4anandprakash/" class="instagram"><i class="fa fa-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+         Copyright <strong>ANAND WORLD</strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!--
+          All the links in the footer should remain intact.
+          You can delete the links only if you purchased the pro version.
+          Licensing information: https://bootstrapmade.com/license/
+          Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=TheEvent
+        -->
+        Designed by anand-prakash.com</a>
+      </div>
+    </div>
+  </footer><!-- #footer -->
+
+  <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+
+  <!-- JavaScript Libraries -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/jquery/jquery-migrate.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/superfish/hoverIntent.js"></script>
+  <script src="lib/superfish/superfish.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/venobox/venobox.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+  <!-- Contact Form JavaScript File -->
+  
+
+  <!-- Template Main Javascript File -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>

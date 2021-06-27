@@ -1,0 +1,110 @@
+
+<%-include("layout/header"); %>
+<!-- 1.heading title && second heading and heading  description
+2.social media account address
+3.image(design)
+4.description
+    a)paragraph1
+    b)paragraph2
+    c)paragraph3
+5.website address -->
+<div class="container">
+
+    <form action="/admin/add" class="myform" method="post" enctype="multipart/form-data">
+        <br><br>
+        <!--1 heading title and heading description  -->
+        <div class="row">
+            <div class="col-sm-4">
+                <label for="heading-title" class="form-label">Heading title</label>
+                <input type="text" class="form-control" name="heading" required>
+            </div>
+            <div class="col-sm-4">
+                <label for="second-heading" class="form-label">second heading</label>
+                <input type="text" class="form-control" name="sec_head" required>
+            </div>
+            <div class="col-sm-4">
+              <label for="heading-description" class="form-label">Heading description</label>
+              <input type="text" class="form-control" name="head_des" required>
+          </div>
+        </div>
+        <br><br>
+        <!--2 social media handle -->
+        <div class="row">
+            <div class="col-sm-3">
+              <label for="facebook" class="form-label">Facebook  <i class="fa fa-facebook"></i> </label>
+              <input type="text" class="form-control" name="fb" placeholder="" value="" required>
+              <div class="invalid-feedback">
+                Valid first name is required.
+              </div>
+            </div>
+            
+            <div class="col-sm-3">
+              <label for="google" class="form-label">Google <i class="fa fa-google-plus"></i> </label>
+              <input type="text" class="form-control" name="google" placeholder="" value="" required>
+              <div class="invalid-feedback">
+                Valid last name is required.
+              </div>
+              </div>
+
+              <div class="col-sm-3">
+                <label for="linkdin" class="form-label">Linkedin <i class="fa fa-linkedin"></i> </label>
+                <input type="text" class="form-control" name="linkedin" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                  Valid last name is required.
+                </div>
+                </div>
+
+                <div class="col-sm-3">
+                    <label for="twitter" class="form-label">Twitter <i class="fa fa-twitter"></i> </label>
+                    <input type="text" class="form-control" name="twitter" placeholder="" value="" >
+                    <div class="invalid-feedback">
+                      Valid first name is required.
+                    </div>
+                  </div>
+        </div>
+        <br><br>
+        <!-- 3. image upload -->
+        <div class="row">
+            <div class="col-sm-12">
+                <label for="design" class="form-label">Upload your design </label>
+                <input class="form-control" type="file" name="design_img" required>
+            </div>
+          </div>
+          <br><br>
+          <!--4. design description -->
+          <div class="row">
+            <div class="form-floating col-sm-4">
+                <label for="paragraph" class="form-label">Design Description 1</label>
+                <textarea class="form-control" placeholder="design description" name="para1" style="height: 50px" required></textarea>
+              </div>
+            
+            <div class="col-sm-4">
+                <label for="paragraph" class="form-label">Design Description 2 </label>
+                <textarea class="form-control" placeholder="design description" name="para2" style="height: 50px"></textarea>
+            </div>
+            
+            <div class="col-sm-4">
+                <label for="paragraph" class="form-label">Design Description 3</label>
+                <textarea class="form-control" placeholder="design description" name="para3" style="height: 50px"></textarea>
+            </div>
+          </div>
+          <br><br>
+          <!-- website address -->
+          <div class="row">
+            <div class="col-sm-6">
+                <label for="website" class="form-label">website Address  <i class="fa fa-world"></i> </label>
+                <input type="text" class="form-control" name="web" placeholder="" value="" required>
+            </div>
+        </div>
+        <br>
+
+        <button type="submit" class="btn btn-lg btn-primary"> Add Item </button>
+        <br>
+    </form>
+    
+
+</div>
+  
+ 
+
+<%-include("layout/footer"); %>

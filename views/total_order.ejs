@@ -1,0 +1,63 @@
+<%- include("layout/header"); %>
+
+<div class="container">
+    <div class="row" style="border: 3px black;">
+        <div class="col-md-2" style="border: 3px black;">
+            <p><b>Name</b></p>
+        </div>
+        <div class="col-md-2">
+            <p><b>type</b></p>
+        </div>
+        <div class="col-md-2">
+            <p><b>Email Address</b></p>
+        </div>
+        <div class="col-md-2">
+            <p><b>Address</b></p>
+        </div>
+        <div class="col-md-2">
+            <p><b>description</b></p>
+        </div>
+        <div class="col-md-1">
+            <p><b>Contact</b></p>
+        </div>
+        <div class="col-md-1">
+            <p><b>image</b></p>
+        </div>
+        
+    </div>
+    <% orders.forEach(function(order){ %>
+        <div class="row" style="background-color: rgba(6, 12, 34, 0.98);; color: #e8ebf3; border-radius: 5px 5px; margin-bottom: 10px;">
+            <div class="col-md-2" >
+                <p><%= order.name %></p>
+            </div>
+            
+            <div class="col-md-2">
+                <p><%=order.type %></p>
+            </div>
+            <div class="col-md-2">
+                <a href="/admin/user/<%= order.userid %>" style="color: #e8ebf3;"><p><%=order.email %></p></a>
+                
+            </div>
+            <div class="col-md-2">
+                <p><%=order.address%>,<%=order.state%>,<%=order.zip%></p>
+            </div>
+            <div class="col-md-2">
+                <p><%=order.description %></p>
+            </div>
+            <div class="col-md-1">
+                <p><%= order.mob %> </p>
+                <p><%= order.mob2 %></p>
+            </div>
+            <div class="col-md-1">
+                <img src="../order/<%= order.order_img %>" class="img-fluid">
+            </div>
+            
+        </div>
+
+
+    <% }); %>
+
+
+</div>
+
+<%- include("layout/footer"); %>
